@@ -12,9 +12,12 @@ public class User{
     }
     public User(String username, String password){
         this.username = username;
-        if(Chat.getInstance().checkPassword(password)){
+        if(ChatDevChecker.getInstance().checkPassword(password)){
             sendMessageBehavior = new SendMessageFromDev();
         }
+    }
+    public User(ISendMessageBehavior sendMessageBehavior){
+        this.sendMessageBehavior = sendMessageBehavior;
     }
 
     public void setUsername(String username){

@@ -5,8 +5,4 @@ public class SendMessageFromDev implements ISendMessageBehavior{
     public void setMessage(String message, String user) {
         chat.addMessage(user + sticker + ":  " + message);
     }
-    @Override
-    public String getChat() {
-        return chat.toString();
-    }
 }
